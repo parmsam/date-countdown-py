@@ -2,8 +2,7 @@
 
 # Import libraries
 from shiny import *
-
-# import shinyswatch
+from pathlib import Path
 import os
 import pandas as pd
 import numpy as np
@@ -11,15 +10,13 @@ from datetime import datetime
 from pathlib import Path
 
 # Import the data
-## Get the current working directory
-cwd = os.getcwd()
-## Define the file path relative to the current working directory
-# file_path = os.path.join(cwd, "birthdates.csv")
+file_path = Path(__file__).parent / "birthdates.csv"
 ## Read the data file using pandas
-# data = pd.read_csv(file_path)
+data = pd.read_csv(file_path)
+
 ## Alternatively, you can import a public CSV file from a URL such as the one below
-public_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSiiCJ2cx7WYplflvzmZOWwfI8zhGYJ109sLGpCMD9yWyKxK6fFZ_e7UOPkWq8LbxjGJlTfCAjCwYSx/pub?gid=0&single=true&output=csv"
-data = pd.read_csv(public_url)
+# public_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSiiCJ2cx7WYplflvzmZOWwfI8zhGYJ109sLGpCMD9yWyKxK6fFZ_e7UOPkWq8LbxjGJlTfCAjCwYSx/pub?gid=0&single=true&output=csv"
+# data = pd.read_csv(public_url)
 
 
 # Define helper functions

@@ -1,24 +1,21 @@
 # Description: A simple app that counts down days to event
+
 # Import libraries
 from shiny import *
-
-# import shinyswatch
+from pathlib import Path
 import os
 import pandas as pd
 import numpy as np
 from datetime import datetime
 
 # Import the data
-## Get the current working directory
-cwd = os.getcwd()
-## Define the file path relative to the current working directory
-# file_path = os.path.join(cwd, "events.csv")
+file_path = Path(__file__).parent / "events.csv"
 ## Read the data file using pandas
-# data = pd.read_csv(file_path)
+data = pd.read_csv(file_path)
 
 ## Alternatively, you can import a public CSV file from a URL such as the one below
-public_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSS-Stwrw4ikOVAOgK6lzyqhbnC3T6xUynhoVIiA1UYlGQApXy-m12hu4aU2JnweyTV44wkOgK5JKCP/pub?gid=0&single=true&output=csv"
-data = pd.read_csv(public_url)
+# public_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSS-Stwrw4ikOVAOgK6lzyqhbnC3T6xUynhoVIiA1UYlGQApXy-m12hu4aU2JnweyTV44wkOgK5JKCP/pub?gid=0&single=true&output=csv"
+# data = pd.read_csv(public_url)
 
 
 # Define helper functions
