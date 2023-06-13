@@ -102,6 +102,8 @@ def server(input, output, session):
         results = []
         for name, date, location in events:
             days_remaining = day_difference(today, date)
+            if days_remaining < 0:
+                continue
             results.append((name, date, days_remaining, location))
 
         # sort the results by the number of days remaining
